@@ -19,7 +19,7 @@ public abstract class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AppModule appModule = new AppModule(this);
-        ServiceModule serviceModule = new ServiceModule(this, appModule.apiClient());
+        ServiceModule serviceModule = new ServiceModule(this);
 
         component = DaggerAppComponent.builder()
                 .appModule(appModule)

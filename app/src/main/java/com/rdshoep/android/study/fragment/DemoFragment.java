@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rdshoep.android.study.api.UserApi;
 import com.rdshoep.android.study.data.service.UserService;
 import com.rdshoep.android.study.fragment.base.BaseFragment;
 
@@ -26,6 +27,8 @@ public class DemoFragment extends BaseFragment {
 
     @Inject
     UserService userService;
+    @Inject
+    UserApi userApi;
 
     @Nullable
     @Override
@@ -40,5 +43,6 @@ public class DemoFragment extends BaseFragment {
         getAppComponent().inject(this);
 
         Log.d(TAG, String.valueOf(userService));
+        Log.d(TAG, String.valueOf(userApi));
     }
 }

@@ -8,8 +8,8 @@ package com.rdshoep.android.study.application;
  *   1.0.0(11/5/2015)
  */
 
-import com.rdshoep.android.study.api.Api;
-import com.rdshoep.android.study.api.impl.ApiImpl;
+import android.app.Application;
+
 import com.rdshoep.android.study.dagger.ApplicationLife;
 
 import dagger.Module;
@@ -25,7 +25,7 @@ public class AppModule {
 
     @Provides
     @ApplicationLife
-    public Api apiClient() {
-        return new ApiImpl();
+    public Application apiClient() {
+        return myApp;
     }
 }

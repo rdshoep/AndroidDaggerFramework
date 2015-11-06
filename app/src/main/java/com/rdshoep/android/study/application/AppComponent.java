@@ -9,7 +9,6 @@ package com.rdshoep.android.study.application;
  */
 
 import com.rdshoep.android.study.activity.ActivityComponentInterface;
-import com.rdshoep.android.study.api.Api;
 import com.rdshoep.android.study.dagger.ApplicationLife;
 import com.rdshoep.android.study.data.service.ServiceModule;
 import com.rdshoep.android.study.data.service.UserService;
@@ -26,8 +25,6 @@ import dagger.Component;
 )
 public interface AppComponent extends ActivityComponentInterface, FragmentComponentInterface {
     void inject(AppApplication application);
-
-    Api apiClient();
 
     UserService userService();
 }

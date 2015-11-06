@@ -10,6 +10,7 @@ package com.rdshoep.android.study.application;
 
 import android.util.Log;
 
+import com.rdshoep.android.study.api.UserApi;
 import com.rdshoep.android.study.data.service.UserService;
 import com.rdshoep.android.study.data.service.ServiceModule;
 
@@ -20,6 +21,8 @@ public class AppApplication extends BaseApplication {
 
     @Inject
     UserService userService;
+    @Inject
+    UserApi userApi;
 
     @Override
     public void onCreate() {
@@ -27,5 +30,6 @@ public class AppApplication extends BaseApplication {
         component.inject(this);
 
         Log.d(TAG, String.valueOf(userService));
+        Log.d(TAG, String.valueOf(userApi));
     }
 }

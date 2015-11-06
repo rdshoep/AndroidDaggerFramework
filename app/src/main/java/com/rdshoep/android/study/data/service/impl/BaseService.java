@@ -8,16 +8,13 @@ package com.rdshoep.android.study.data.service.impl;
  *   1.0.0(11/5/2015)
  */
 
-import com.rdshoep.android.study.api.Api;
 import com.rdshoep.android.study.application.BaseApplication;
 
 public class BaseService {
 
     BaseApplication myApp;
-    Api api;
 
-    public BaseService(BaseApplication myApp, Api api) {
+    public BaseService(BaseApplication myApp) {
         this.myApp = myApp;
-        this.api = api;
     }
 }
