@@ -8,11 +8,8 @@ package com.rdshoep.android.study.application;
  *   1.0.0(11/5/2015)
  */
 
-import com.rdshoep.android.study.activity.ActivityComponentInterface;
 import com.rdshoep.android.study.dagger.ApplicationLife;
 import com.rdshoep.android.study.data.service.ServiceModule;
-import com.rdshoep.android.study.data.service.UserService;
-import com.rdshoep.android.study.fragment.FragmentComponentInterface;
 
 import dagger.Component;
 
@@ -23,8 +20,6 @@ import dagger.Component;
                 ServiceModule.class
         }
 )
-public interface AppComponent extends ActivityComponentInterface, FragmentComponentInterface {
+public interface AppComponent extends AppProvidesInterface {
     void inject(AppApplication application);
-
-    UserService userService();
 }

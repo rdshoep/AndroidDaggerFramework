@@ -8,14 +8,7 @@ package com.rdshoep.android.study.fragment.base;
  *   1.0.0(11/5/2015)
  */
 
-import com.rdshoep.android.study.activity.base.ActivityComponent;
-import com.rdshoep.android.study.application.AppComponent;
-
 public interface IFragment {
-
-    AppComponent getAppComponent();
-
-    ActivityComponent getActivityComponent();
 
     FragmentComponent getFragmentComponent();
 }

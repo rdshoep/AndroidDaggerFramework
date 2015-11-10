@@ -9,12 +9,22 @@ package com.rdshoep.android.study.activity.base;
  */
 
 import android.app.Activity;
+import android.os.Bundle;
 
 import com.rdshoep.android.study.application.AppComponent;
 import com.rdshoep.android.study.application.BaseApplication;
 
 public abstract class BaseActivity extends Activity implements IBaseActivity {
+
+    BaseApplication myApp;
     ActivityComponent activityComponent;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        myApp = getBaseApplication();
+    }
 
     @Override
     public ActivityComponent getActivityComponent() {
@@ -23,16 +33,12 @@ public abstract class BaseActivity extends Activity implements IBaseActivity {
                 if (activityComponent == null) {
                     activityComponent = DaggerActivityComponent.builder()
                             .activityModule(new ActivityModule(this, getBaseApplication()))
+                            .appComponent(myApp.getApplicationComponent())
                             .build();
                 }
             }
         }
         return activityComponent;
-    }
-
-    @Override
-    public AppComponent getAppComponent() {
-        return getBaseApplication().getApplicationComponent();
     }
 
     @Override

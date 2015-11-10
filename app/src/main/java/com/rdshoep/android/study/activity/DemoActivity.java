@@ -28,7 +28,7 @@ public class DemoActivity extends BaseAppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getAppComponent().inject(this);
+        getActivityComponent().inject(this);
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, new DemoFragment(), "fragmentTag")

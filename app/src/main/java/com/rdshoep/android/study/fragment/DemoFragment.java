@@ -40,7 +40,7 @@ public class DemoFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getAppComponent().inject(this);
+        getFragmentComponent().inject(this);
 
         Log.d(TAG, String.valueOf(userService));
         Log.d(TAG, String.valueOf(userApi));

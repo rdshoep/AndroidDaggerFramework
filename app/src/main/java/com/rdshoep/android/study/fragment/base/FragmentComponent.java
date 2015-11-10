@@ -8,12 +8,17 @@ package com.rdshoep.android.study.fragment.base;
  *   1.0.0(11/5/2015)
  */
 
+import com.rdshoep.android.study.activity.base.ActivityComponent;
 import com.rdshoep.android.study.dagger.FragmentLife;
 import com.rdshoep.android.study.fragment.FragmentComponentInterface;
+import com.rdshoep.android.study.fragment.FragmentProvidesInterface;
 
 import dagger.Component;
 
 @FragmentLife
-@Component(modules = FragmentModule.class)
-public interface FragmentComponent {
+@Component(
+        modules = FragmentModule.class,
+        dependencies = ActivityComponent.class
+)
+public interface FragmentComponent extends FragmentComponentInterface, FragmentProvidesInterface {
 }
